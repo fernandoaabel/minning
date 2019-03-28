@@ -1,0 +1,172 @@
+@relation 'c__users_fernando.abel_documents_visual studio 2015_Projects_Avaliador Textual_Avaliador Textual_Dados-weka.filters.unsupervised.attribute.StringToWordVector-R1-W1000-prune-rate-1.0-N0-stemmerweka.core.stemmers.NullStemmer-stopwords-handlerweka.core.stopwords.Null-M1-tokenizerweka.core.tokenizers.WordTokenizer -delimiters \" \\r\\n\\t.,;:\\\'\\\"()?!\"-weka.filters.supervised.attribute.AttributeSelection-Eweka.attributeSelection.InfoGainAttributeEval-Sweka.attributeSelection.Ranker -T 0.0 -N -1-weka.filters.MultiFilter-Fweka.filters.unsupervised.attribute.StringToWordVector -R 1 -W 1000 -prune-rate -1.0 -N 0 -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\"-Fweka.filters.supervised.attribute.AttributeSelection -E \"weka.attributeSelection.InfoGainAttributeEval \" -S \"weka.attributeSelection.Ranker -T 0.0 -N -1\"'
+
+@attribute assim numeric
+@attribute sobr numeric
+@attribute cron numeric
+@attribute apen numeric
+@attribute temp numeric
+@attribute expost numeric
+@attribute ajud numeric
+@attribute hor numeric
+@attribute ha numeric
+@attribute tamb numeric
+@attribute uso numeric
+@attribute curt numeric
+@attribute feit numeric
+@attribute recuper numeric
+@attribute port numeric
+@attribute recomend numeric
+@attribute adequ numeric
+@attribute mol numeric
+@attribute envi numeric
+@attribute segur numeric
+@attribute us numeric
+@attribute orientaca numeric
+@attribute long numeric
+@attribute efeit numeric
+@attribute artig numeric
+@attribute c numeric
+@attribute praz numeric
+@attribute necessa numeric
+@attribute rotin numeric
+@attribute orientaco numeric
+@attribute oferec numeric
+@attribute abdom numeric
+@attribute apo numeric
+@attribute suport numeric
+@attribute est numeric
+@attribute inclusiv numeric
+@attribute pressa numeric
+@attribute ser numeric
+@attribute articulaco numeric
+@attribute emerg numeric
+@attribute alcool numeric
+@attribute pois numeric
+@attribute nause numeric
+@attribute import numeric
+@attribute vez numeric
+@attribute muit numeric
+@attribute interval numeric
+@attribute posico numeric
+@attribute decorr numeric
+@attribute papagai numeric
+@attribute paci numeric
+@attribute tip numeric
+@attribute maior numeric
+@attribute emb numeric
+@attribute almof numeric
+@attribute colater numeric
+@attribute feliz numeric
+@attribute const numeric
+@attribute facilit numeric
+@attribute dificult numeric
+@attribute fiz numeric
+@attribute demand numeric
+@attribute recomendaca numeric
+@attribute perd numeric
+@attribute proc numeric
+@attribute nutr numeric
+@attribute impossi numeric
+@attribute levantes numeric
+@attribute md numeric
+@attribute consens numeric
+@attribute beb numeric
+@attribute conseqenc numeric
+@attribute molecul numeric
+@attribute fig numeric
+@attribute intervetebr numeric
+@attribute violent numeric
+@attribute traca numeric
+@attribute esper numeric
+@attribute nerv numeric
+@attribute destruica numeric
+@attribute naquel numeric
+@attribute nacion numeric
+@attribute desgastams numeric
+@attribute informaca numeric
+@attribute vertic numeric
+@attribute coccix numeric
+@attribute assent numeric
+@attribute adi numeric
+@attribute defeit numeric
+@attribute consum numeric
+@attribute fin numeric
+@attribute torco numeric
+@attribute esquerd numeric
+@attribute aceit numeric
+@attribute pression numeric
+@attribute reproduz numeric
+@attribute reeducaca numeric
+@attribute liberaca numeric
+@attribute sig numeric
+@attribute @@class@@ {Negativo,Positivo,Regular}
+
+@data
+{10 1,37 1,51 1}
+{32 1,78 1}
+{31 1,32 1,52 1,63 1,79 1}
+{0 1,1 1,3 1,4 1,6 1,9 1,12 1,31 1,32 1,33 1,34 1,37 1,38 1,41 1,43 1,44 1,45 1,50 1,52 1,57 1,63 1,78 1}
+{0 1,1 1,3 1,9 1,34 1,37 1,44 1,45 1,50 1,78 1}
+{0 1,1 1,6 1,8 1,9 1,11 1,15 1,22 1,23 1,27 1,32 1,36 1,42 1,43 1,44 1,45 1,51 1,52 1,55 1,63 1,78 1,79 1}
+{4 1,9 1,10 1,12 1,15 1,32 1,34 1,50 1,53 1,54 1,78 1}
+{51 1}
+{0 1,1 1,4 1,6 1,9 1,16 1,32 1,43 1,44 1,45 1,50 1,52 1}
+{2 1,3 1,4 1,8 1,9 1,10 1,12 1,22 1,32 1,34 1,43 1,44 1,45 1,50 1,51 1,52 1,63 1,78 1}
+{1 1,9 1,32 1,34 1,37 1,44 1,50 1,51 1,52 1,63 1,78 1}
+{9 1,10 1,12 1,27 1,43 1,45 1,50 1,63 1,78 1}
+{6 1,8 1,12 1,23 1,41 1,55 1}
+{4 1,8 1,9 1,12 1,32 1,41 1,43 1,50 1,52 1,78 1}
+{3 1,9 1,50 1,52 1}
+{1 1,9 1,12 1,43 1,50 1}
+{4 1,8 1,9 1,10 1,50 1,78 1}
+{20 1,23 1,41 1,50 1,78 1}
+{9 1,32 1,43 1,44 1,50 1,51 1,52 1,63 1}
+{9 1,10 1,15 1,22 1,27 1,32 1,34 1,44 1,45 1,50 1,51 1,52 1,57 1,63 1,78 1,79 1}
+{0 1,4 1,50 1}
+{0 1,1 1,4 1,8 1,9 1,10 1,16 1,20 1,23 1,31 1,43 1,44 1,45 1,50 1,52 1,56 1,63 1,78 1}
+{0 1,1 1,4 1,8 1,37 1,50 1,63 1,79 1}
+{1 1,3 1,4 1,12 1,19 1,20 1,22 1,23 1,31 1,32 1,37 1,41 1,44 1,45 1,50 1,78 1}
+{1 1,4 1,6 1,22 1,37 1,43 1,44 1,45 1,50 1,52 1,63 1,78 1}
+{6 1,41 1,50 1,63 1,78 1}
+{1 1,6 1,9 1,12 1,37 1,41 1,45 1,50 1,51 1,63 1,78 1}
+{8 1,9 1,44 1,52 1,63 1,78 1}
+{23 1,34 1,50 1,51 1,52 1,78 1}
+{50 1,52 1}
+{1 1,4 1,11 1,16 1,32 1,50 1,51 1,78 1,79 1}
+{1 1,6 1,9 1,19 1,43 1,44 1,45 1,50 1,51 1,52 1}
+{1 1,9 1,27 1,32 1,34 1,51 1,54 1,63 1,78 1}
+{10 1,12 1,43 1,51 1,78 1}
+{63 1,78 1}
+{9 1,37 1,50 1,52 1}
+{1 1,3 1,9 1,20 1,22 1,23 1,36 1,43 1,45 1,50 1,51 1,52 1,63 1,78 1,79 1}
+{34 1,50 1,63 1,78 1}
+{9 1,78 1}
+{0 1,1 1,2 1,4 1,6 1,9 1,11 1,13 1,15 1,20 1,22 1,23 1,28 1,29 1,32 1,34 1,35 1,38 1,41 1,43 1,44 1,45 1,50 1,51 1,52 1,59 1,60 1,63 1,67 1,78 1,99 Positivo}
+{0 1,1 1,2 1,3 1,4 1,5 1,6 1,8 1,9 1,12 1,16 1,17 1,20 1,21 1,22 1,23 1,24 1,25 1,27 1,30 1,32 1,33 1,34 1,44 1,50 1,51 1,52 1,54 1,55 1,58 1,61 1,63 1,66 1,78 1,99 Positivo}
+{0 1,1 1,2 1,3 1,4 1,6 1,7 1,9 1,10 1,11 1,12 1,13 1,15 1,16 1,19 1,20 1,21 1,22 1,23 1,24 1,26 1,27 1,29 1,32 1,34 1,35 1,36 1,37 1,38 1,42 1,43 1,44 1,45 1,47 1,50 1,52 1,54 1,55 1,62 1,63 1,64 1,65 1,66 1,67 1,78 1,99 Positivo}
+{0 1,1 1,2 1,3 1,4 1,6 1,8 1,9 1,10 1,11 1,12 1,15 1,16 1,17 1,19 1,20 1,22 1,26 1,27 1,32 1,34 1,37 1,43 1,44 1,45 1,50 1,51 1,52 1,53 1,60 1,62 1,63 1,77 1,78 1,99 Positivo}
+{0 1,1 1,4 1,8 1,9 1,11 1,16 1,23 1,24 1,25 1,32 1,43 1,44 1,45 1,46 1,50 1,52 1,54 1,59 1,63 1,65 1,68 1,69 1,78 1,99 Positivo}
+{1 1,2 1,4 1,6 1,7 1,9 1,10 1,12 1,13 1,14 1,15 1,17 1,20 1,21 1,22 1,23 1,25 1,26 1,27 1,28 1,32 1,34 1,35 1,37 1,38 1,42 1,43 1,44 1,45 1,46 1,48 1,49 1,50 1,51 1,52 1,58 1,61 1,63 1,64 1,69 1,78 1,99 Positivo}
+{0 1,1 1,6 1,8 1,9 1,11 1,15 1,22 1,23 1,27 1,30 1,32 1,36 1,42 1,43 1,45 1,51 1,52 1,55 1,63 1,68 1,78 1,99 Positivo}
+{0 1,3 1,4 1,6 1,9 1,12 1,15 1,19 1,20 1,23 1,27 1,32 1,36 1,43 1,47 1,50 1,51 1,63 1,78 1,90 1,96 1,99 Regular}
+{0 1,1 1,2 1,4 1,9 1,10 1,12 1,18 1,19 1,20 1,22 1,27 1,30 1,32 1,34 1,36 1,37 1,39 1,44 1,45 1,48 1,50 1,51 1,53 1,72 1,78 1,99 Regular}
+{1 1,2 1,3 1,4 1,8 1,9 1,10 1,16 1,18 1,19 1,29 1,43 1,44 1,48 1,49 1,50 1,51 1,78 1,87 1,99 Regular}
+{0 1,1 1,2 1,3 1,4 1,7 1,8 1,9 1,10 1,11 1,12 1,13 1,14 1,15 1,16 1,19 1,20 1,21 1,22 1,23 1,25 1,26 1,27 1,31 1,32 1,33 1,34 1,36 1,38 1,41 1,43 1,44 1,45 1,46 1,47 1,50 1,51 1,52 1,56 1,61 1,63 1,71 1,73 1,74 1,75 1,76 1,78 1,83 1,84 1,86 1,90 1,91 1,93 1,94 1,95 1,96 1,97 1,99 Regular}
+{0 1,1 1,2 1,3 1,4 1,5 1,6 1,7 1,8 1,9 1,10 1,11 1,12 1,13 1,15 1,16 1,18 1,19 1,20 1,22 1,23 1,25 1,27 1,29 1,30 1,31 1,32 1,33 1,34 1,37 1,38 1,41 1,43 1,44 1,45 1,46 1,47 1,50 1,51 1,53 1,57 1,62 1,63 1,71 1,73 1,74 1,76 1,77 1,78 1,83 1,84 1,86 1,91 1,92 1,94 1,96 1,99 Regular}
+{3 1,6 1,9 1,14 1,16 1,19 1,24 1,28 1,34 1,37 1,41 1,43 1,44 1,50 1,51 1,53 1,99 Regular}
+{0 1,1 1,3 1,4 1,6 1,7 1,8 1,9 1,10 1,12 1,31 1,34 1,36 1,50 1,78 1,81 1,82 1,94 1,99 Regular}
+{0 1,1 1,7 1,8 1,9 1,10 1,11 1,12 1,15 1,16 1,19 1,27 1,30 1,32 1,36 1,37 1,38 1,41 1,43 1,44 1,45 1,50 1,51 1,52 1,56 1,57 1,63 1,78 1,86 1,87 1,90 1,93 1,99 Regular}
+{1 1,3 1,4 1,8 1,11 1,12 1,13 1,26 1,32 1,34 1,37 1,43 1,45 1,49 1,50 1,52 1,53 1,60 1,63 1,77 1,78 1,87 1,99 Regular}
+{0 1,1 1,3 1,4 1,5 1,6 1,8 1,9 1,10 1,12 1,13 1,19 1,21 1,22 1,25 1,27 1,29 1,30 1,32 1,34 1,36 1,37 1,39 1,41 1,43 1,44 1,45 1,48 1,50 1,51 1,56 1,57 1,59 1,71 1,72 1,73 1,74 1,75 1,78 1,80 1,83 1,84 1,85 1,99 Regular}
+{3 1,9 1,18 1,35 1,37 1,44 1,45 1,50 1,51 1,52 1,63 1,78 1,95 1,99 Regular}
+{1 1,4 1,6 1,8 1,9 1,10 1,12 1,20 1,21 1,32 1,38 1,41 1,43 1,45 1,46 1,48 1,49 1,50 1,51 1,57 1,59 1,77 1,78 1,92 1,93 1,97 1,99 Regular}
+{0 1,1 1,3 1,4 1,6 1,8 1,9 1,15 1,19 1,20 1,22 1,24 1,31 1,32 1,36 1,37 1,44 1,50 1,57 1,63 1,72 1,73 1,78 1,91 1,99 Regular}
+{0 1,1 1,3 1,4 1,5 1,6 1,7 1,8 1,9 1,10 1,12 1,14 1,15 1,16 1,18 1,20 1,21 1,27 1,31 1,33 1,34 1,38 1,39 1,40 1,41 1,43 1,44 1,45 1,48 1,49 1,50 1,51 1,52 1,53 1,56 1,58 1,60 1,63 1,74 1,75 1,78 1,85 1,88 1,89 1,92 1,99 Regular}
+{0 1,1 1,4 1,5 1,6 1,8 1,9 1,10 1,12 1,16 1,18 1,31 1,32 1,33 1,34 1,37 1,40 1,41 1,43 1,44 1,45 1,47 1,49 1,50 1,51 1,52 1,63 1,70 1,78 1,80 1,82 1,98 1,99 Regular}
+{0 1,1 1,4 1,8 1,9 1,10 1,11 1,12 1,22 1,34 1,41 1,43 1,46 1,50 1,51 1,57 1,78 1,99 Regular}
+{0 1,1 1,2 1,4 1,5 1,6 1,8 1,9 1,10 1,12 1,16 1,22 1,28 1,31 1,33 1,34 1,37 1,40 1,41 1,43 1,50 1,51 1,52 1,56 1,59 1,62 1,70 1,78 1,81 1,88 1,89 1,99 Regular}
+{1 1,3 1,4 1,5 1,6 1,9 1,10 1,12 1,14 1,28 1,31 1,33 1,37 1,39 1,40 1,41 1,43 1,45 1,50 1,51 1,58 1,60 1,62 1,70 1,78 1,80 1,82 1,88 1,98 1,99 Regular}
+{0 1,1 1,2 1,3 1,4 1,7 1,9 1,10 1,12 1,14 1,19 1,20 1,27 1,30 1,32 1,34 1,37 1,41 1,44 1,45 1,50 1,53 1,61 1,63 1,71 1,78 1,95 1,97 1,99 Regular}
+{0 1,1 1,3 1,4 1,5 1,6 1,8 1,9 1,10 1,11 1,12 1,13 1,15 1,16 1,20 1,22 1,26 1,29 1,31 1,33 1,34 1,35 1,36 1,37 1,38 1,39 1,41 1,44 1,45 1,47 1,50 1,51 1,52 1,61 1,63 1,76 1,78 1,98 1,99 Regular}
+{0 1,1 1,3 1,4 1,5 1,6 1,8 1,9 1,10 1,14 1,24 1,28 1,29 1,31 1,33 1,37 1,40 1,44 1,45 1,50 1,52 1,57 1,58 1,72 1,75 1,76 1,78 1,85 1,99 Regular}
+{1 1,2 1,3 1,6 1,7 1,8 1,9 1,12 1,14 1,15 1,16 1,28 1,32 1,34 1,36 1,37 1,43 1,44 1,45 1,50 1,51 1,53 1,56 1,70 1,77 1,81 1,89 1,99 Regular}

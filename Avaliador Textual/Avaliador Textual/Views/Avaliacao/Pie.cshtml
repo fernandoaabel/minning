@@ -1,0 +1,52 @@
+﻿@model Arquivo
+
+@{
+    ViewBag.Title = "Pie";
+}
+
+<div id="chartdiv" style="height:400px;"></div>
+
+<script>
+    $(document).ready(function () {
+        var valorIndice = @(Model.IndiceApreensibilidade);
+        var data = [[valorIndice, valorIndice], ['', 100-valorIndice]];
+
+        var colors = null;
+        if (valorIndice > 70)
+            colors = ["#72C04B", "#C0EBAB"];
+        else if (valorIndice > 60)
+            colors = ["#ffc021", "#ffd877"];
+        else if (valorIndice > 30)
+            colors = ["#e0311a", "#db6959"];
+        else
+            colors = ["#930808", "#912222"];
+
+        var plot1 = $.jqplot('chartdiv', [data],
+          {
+              title: '',
+              seriesColors: colors,
+              seriesDefaults: {
+                  shadow: false,
+                  renderer: $.jqplot.PieRenderer,
+                  rendererOptions: {
+                      highlightMouseOver:false,
+                      padding: 5,
+                      sliceMargin: 1,
+                      startAngle: 180,
+                      fill: true,
+                      fillAndStroke: true,
+                      showDataLabels: true,
+                      dataLabels: 'label',
+                      dataLabelNudge: -25
+                  }
+              },
+              grid: {
+                  background: 'transparent',
+                  borderWidth: 0,
+                  shadow: false
+              },
+              legend: { show: true}
+          }
+        );
+    });
+</script>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Arquivo>
+
+@{
+    ViewBag.Title = "Gerenciar Arquivos de Treinamento";
+
+    var message = TempData["Message"];
+}
+
+<h3>@ViewBag.Title</h3>
+
+<div class="message">@message</div>
+
+<div class="opcoesPreBlock">
+    <div class="divPesquisa">
+        <span class="spanPesquisa">
+            <input id="searchFilter" type="text" class="pesquisa fa form-control" name="searchTerm" placeholder="Pesquisar itens" />
+        </span>
+        <br />
+    </div>
+
+    <div class="divBotao">
+        @Html.ActionLink("Novo Arquivo", "Create", "Arquivos", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Excluir todos", "DeleteAll", "Arquivos", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Carregar arquivos", "Upload", "Arquivos", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Realizar Treinamento »", "Treinamento", "Arquivos", null, new { @id = "treinamento", @class = "btn btn-primary" })
+    </div>
+</div>
+
+@Html.Partial("_Arquivos", Model)

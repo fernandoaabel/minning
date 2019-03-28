@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Sobre";
+}
+
+<div class="jumbotron" style="text-align:center;">
+    <img src="~/Images/Logo/black1.png"/>
+    <h3>Avaliação Textual de informações da Área da saúde</h3>
+    <h5>
+        Desenvolvido por Fernando Abel, orientado por Carine G. Webber, no ano de 2016.
+        <br /><br />
+        Curso de Ciência da Computação na Universidade de Caxias do Sul.
+    </h5>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Iniciando</h2>
+        <p>
+            Para ser possível avaliar textos, é necessário realizar o treinamento do sistema.
+            Para realizar um treinamento, é necessário realizar o Log In em uma conta e clicar na aba "Treinamento" do menu.
+        </p>
+        <p>@Html.ActionLink("Realizar Treinamento »", "Index", "Arquivos", null, new { @class = "btn btn-default" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Avaliando textos</h2>
+        <p>A partir do momento que o Treinamento é realizado, é possível realizar uma avaliação de um texto, disponível na aba "Avaliação de Textos" do menu.</p>
+        <p>@Html.ActionLink("Realizar uma Avaliação »", "Index", "Avaliacao", null, new { @class = "btn btn-default" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Entrando em contato</h2>
+        <p>Para dúvidas e sugestões, envie um e-mail para os organizadores.</p>
+        <address>
+            <strong>Fernando Abel    </strong><a href="mailto:fernandoaabel@gmail.com">fernandoaabel@gmail.com</a><br />
+            <strong>Carine G. Webber </strong><a href="mailto:cgwebber@ucs.br">cgwebber@ucs.br</a><br />
+        </address>
+    </div>
+</div>

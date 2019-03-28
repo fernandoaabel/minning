@@ -1,0 +1,54 @@
+﻿@model Arquivo
+
+<div class="col-md-4">
+    <div class="card">
+        <div class=".jqplot-meterGauge-label">
+            <h4 class="title">Fórmula de Fernández-Huerta</h4>
+            <p class="category">Fórmula utilizada pra calcular a apreensibilidade.</p>
+        </div>
+        <div class="content">
+            <svg id="fillgauge1" width="97%" height="250"></svg>
+        </div>
+    </div>
+</div>
+
+<script>
+    valorIndice = @(Model.IndiceApreensibilidade);
+
+    var config = liquidFillGaugeDefaultSettings();
+    config.textColor = "#000000";
+    config.waveTextColor = "#FFFFFF";
+    config.circleThickness = 0.1;
+    config.waveAnimateTime = 2000;
+    config.waveHeight = 0.2;
+    config.waveCount = 1;
+    config.displayPercent = false;
+
+    // Muito fácil
+    if (valorIndice > 89) {
+        config.circleColor = "#22B522";
+        config.waveColor = "#3AC23A";
+    }
+    // Fácil
+    else if (valorIndice > 69) {
+        config.circleColor = "#6DB56D";
+        config.waveColor = "#61C261";
+    }
+    // Normal
+    else if (valorIndice > 59) {
+        config.circleColor = "#DBDA1A";
+        config.waveColor = "#E7E658";
+    }
+    // Difícil
+    else if (valorIndice > 29) {
+        config.circleColor = "#D68400";
+        config.waveColor = "#FF9500";
+    }
+    // Muito difícil
+    else if (valorIndice >= 0) {
+        config.circleColor = "#C72A2A";
+        config.waveColor = "#D63A3A";
+    }
+
+    var gauge1 = loadLiquidFillGauge("fillgauge1", valorIndice, config);
+</script>

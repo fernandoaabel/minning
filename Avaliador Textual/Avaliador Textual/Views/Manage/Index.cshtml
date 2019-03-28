@@ -1,0 +1,55 @@
+﻿@model Avaliador_Textual.Models.IndexViewModel
+@{
+    ViewBag.Title = "Gerenciar Conta";
+}
+
+<h3>@ViewBag.Title</h3>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+
+<div class="divGeral">
+    <div div="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class=".jqplot-meterGauge-label">
+                    <h4 class="title">Configurações da conta</h4>
+                    <p class="category">Altere as configurações de sua conta.</p>
+                </div>
+                <div class="content" style="height:200px; text-align:center;">
+                    <strong>Usuário conectado:</strong>
+                    <br />
+                    <div style="font-weight: bold; font-size: 30px">
+                        @User.Identity.Name
+                    </div>
+                    
+                    <hr />
+                    <div style="margin-bottom:0;">
+                        @if (Model.HasPassword)
+                        {
+                            @Html.ActionLink("Alterar senha", "ChangePassword", "Manage", null, new { @class = "btn btn-default" })
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Alterar senha", "SetPassword", "Manage", null, new { @class = "btn btn-default" })
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class=".jqplot-meterGauge-label">
+                    <h4 class="title">Acessos</h4>
+                    <p class="category">Crie novos acessos para a área de treinamento.</p>
+                </div>
+                <div class="content" style="height:200px; text-align:center;"">
+                    <hr />
+                    <div style="margin-bottom:0;">
+                        @Html.ActionLink("Criar novo usuário", "Register", "Account", new { ReturnUrl = "/Manage" }, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

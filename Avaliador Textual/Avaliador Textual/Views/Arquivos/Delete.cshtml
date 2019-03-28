@@ -1,0 +1,57 @@
+﻿@model Avaliador_Textual.Models.Arquivo
+
+@{
+    ViewBag.Title = "Excluir Arquivo";
+}
+
+<h3>@ViewBag.Title</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+
+    </dl>
+    
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <div class="col-md-offset-1">
+                <h5>Tem certeza que deseja excluir esse arquivo?</h5>
+                <input type="submit" value="Confirmar exclusão" class="btn btn-danger" />
+                @Html.ActionLink("Voltar à lista", "Index", "Arquivos", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    }
+</div>

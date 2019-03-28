@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minning - @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/fontawesome")
+    @Styles.Render("~/Content/dropzonecss")
+    @Styles.Render("~/Content/datatablecss")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="~/Scripts/D3/d3.layout.cloud.js"></script>
+    <script src="~/Scripts/D3/liquidFillGauge.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="~/Avaliacao/Index"> <img src="~/Images/Logo/white_left.png" style="height:50px;"/> </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Avaliação de Textos", "Index", "Avaliacao")</li>
+                    <li>@Html.ActionLink("Treinamento"        , "Index", "Arquivos")</li>
+                    <li>@Html.ActionLink("Sobre"              , "Sobre", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/otf")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/dropzonescripts")
+    @Scripts.Render("~/bundles/datatablescripts")
+    @Scripts.Render("~/bundles/myscripts")
+    @Scripts.Render("~/bundles/jqplot")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

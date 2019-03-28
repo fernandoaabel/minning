@@ -1,0 +1,117 @@
+﻿@model Arquivo
+
+@{
+    var resultado = Model.Classificacao;
+}
+
+
+<div class="col-md-6">
+    <div class="card">
+        <div class=".jqplot-meterGauge-label">
+            <h4 class="title">Gráfico de Bolhas do Treinamento</h4>
+            <p class="category">Bolhas maiores indicam uma frequência maior nos textos de treinamento salvos.</p>
+            <p class="category">Origem: Documentos de Treinamento salvos.</p>
+        </div>
+        <div id="tags" class="content">
+            <div id="classificacao" style="display:none">@Model.Classificacao</div>
+            <section id="bubbleGraphTags" width="70%">
+                <svg id="svgBubble"></svg>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script>
+    function Clique(tagClicada) {
+        
+        $('li a.active').removeClass('active');
+        $('#' + tagClicada).addClass('active');
+
+        $.post("/Avaliacao/GetFrequenciaPalavrasDB", { tag: tagClicada }, function (json) {
+            var root = d3.nest()
+                        .key(function (d) { return d.Palavra; })
+                        .rollup(function (v) { return d3.sum(v, function (d) { return d.Frequencia; }); })
+                        .entries(json);
+
+            var myData = { name: 'flare', children: [] }; //this will be root 
+            root.forEach(function (palavra) {
+                var dis = {};
+                dis.name = palavra.key;
+                dis.size = palavra.values;
+                myData.children.push(dis);
+            });
+            root = myData;
+
+            var color = d3.scale.category20b();
+            var w = 500, h = 500, format = d3.format(",d");
+
+            var bubble = d3.layout.pack()
+                  .sort(function (a, b) {
+                      return -(a.value - b.value);
+                  })
+                  .size([w, h])
+                  .padding(1.5);
+
+            var svg = d3.select("#svgBubble");
+            svg.selectAll("*").remove();
+            svg.attr("width", w)
+               .attr("height", h)
+               .attr("class", "bubble");
+
+            var node = svg.selectAll(".node")
+                .data(bubble.nodes(classes(root))
+                .filter(function (d) { return !d.children; }))
+              .enter().append("g")
+                .attr("class", "node")
+                .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+            node.append("title")
+                    .text(function (d) { return d.className + ": " + format(d.value); });
+
+            node.append("circle")
+                    .attr("r", function (d) { return d.r; })
+                    .style("fill", function (d) { return color(d.value); });
+
+            node.append("text")
+                    .attr("dy", ".5em")
+                    .style("text-anchor", "middle")
+                    .text(function (d) { return d.className.substring(0, d.r / 3); });
+
+            d3.select(self.frameElement).style("height", h + "px");
+        }, "json");
+    }
+
+    // Returns a flattened hierarchy containing all leaf nodes under the root.
+    function classes(root) {
+        var classes = [];
+
+        function recurse(name, node) {
+            if (node.children) node.children.forEach(function (child) { recurse(node.name, child); });
+            else classes.push({ packageName: name, className: node.name, value: node.size });
+        }
+
+        recurse(null, root);
+        return { children: classes };
+    };
+
+    $.getJSON("/Avaliacao/GetDistinctTag", function (data) {
+
+        var ul = $("<ul/>", { class: "leftnav" });
+        $("#tags").prepend(ul);
+
+        $.each(data, function (key, val) {
+            var anchor = $('<a id="' + val + '" href="#">' + val + '</a>');
+            anchor.on('click', function (e) {
+                e.preventDefault();
+                Clique(val);
+            });
+
+            var li = $('<li></li>');
+            li.append(anchor);
+            ul.append(li);
+        });
+    }).done(function () {
+        var classificacao = $("#classificacao").text();
+        $('#tags #'+classificacao).trigger("click");
+    });
+</script>

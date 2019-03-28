@@ -1,0 +1,143 @@
+﻿@model Arquivo
+
+@{
+    ViewBag.Title = "EscolaridadeAproximada";
+}
+
+<div class="col-md-4">
+    <div class="card">
+        <div class=".jqplot-meterGauge-label">
+            <h4 class="title">Escolaridade Necessária</h4>
+            <p class="category">Escolaridade necessária mínima para o completo entendimento do texto.</p>
+        </div>
+        <div class="content">
+            <div class="grafico">
+                <div class="categoria categoria-1">
+                    <img class="select" src="/Images/select.png" />
+                    <div class="barra"></div>
+                    <div class="detalhe"><hr></div>
+                    <div class="texto"></div>
+                </div>
+                <div class="categoria categoria-2">
+                    <img class="select" src="/Images/select.png" />
+                    <div class="barra"></div>
+                    <div class="detalhe"><hr></div>
+                    <div class="texto"></div>
+                </div>
+                <div class="categoria categoria-3">
+                    <img class="select" src="/Images/select.png" />
+                    <div class="barra"></div>
+                    <div class="detalhe"><hr></div>
+                    <div class="texto"></div>
+                </div>
+                <div class="categoria categoria-4">
+                    <img class="select" src="/Images/select.png" />
+                    <div class="barra"></div>
+                    <div class="detalhe"><hr></div>
+                    <div class="texto"></div>
+                </div>
+                <div class="categoria categoria-5">
+                    <img class="select" src="/Images/select.png" />
+                    <div class="barra"></div>
+                    <div class="detalhe"><hr></div>
+                    <div class="texto"></div>
+                </div>
+                <div class="categoria categoria-6">
+                    <img class="select" src="/Images/select.png" />
+                    <div class="barra"></div>
+                    <div class="detalhe"><hr></div>
+                    <div class="texto"></div>
+                </div>
+                <div class="categoria categoria-7">
+                    <img class="select" src="/Images/select.png" />
+                    <div class="barra"></div>
+                    <div class="detalhe"><hr></div>
+                    <div class="texto"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+<script>
+    $(document).ready(function () {
+        var valorIndice = @(Model.IndiceApreensibilidade);
+
+        var categoria1 = 14;
+        var categoria1bkg = '#D63A3A';
+        var categoria1text = "Ensino Superior";
+
+        var categoria2 = 14;
+        var categoria2bkg = '#FF9500';
+        var categoria2text = "Ensino Médio e Superior";
+
+        var categoria3 = 14;
+        var categoria3bkg = '#FF9500';
+        var categoria3text = "Início do Ensino Médio";
+
+        var categoria4 = 14;
+        var categoria4bkg = '#E7E658';
+        var categoria4text = "8ª e 9ª Série";
+
+        var categoria5 = 14;
+        var categoria5bkg = '#61C261';
+        var categoria5text = "7ª Série";
+
+        var categoria6 = 14;
+        var categoria6bkg = '#61C261';
+        var categoria6text = "6ª Série";
+
+        var categoria7 = 14;
+        var categoria7bkg = '#3AC23A';
+        var categoria7text = "5ª Série";
+
+        $('.categoria-1').css('height', categoria1 + '%');
+        $('.categoria-2').css('height', categoria2 + '%');
+        $('.categoria-3').css('height', categoria3 + '%');
+        $('.categoria-4').css('height', categoria4 + '%');
+        $('.categoria-5').css('height', categoria5 + '%');
+        $('.categoria-6').css('height', categoria6 + '%');
+        $('.categoria-7').css('height', categoria7 + '%');
+
+        $('.categoria-1 .texto').text(categoria1text);
+        $('.categoria-2 .texto').text(categoria2text);
+        $('.categoria-3 .texto').text(categoria3text);
+        $('.categoria-4 .texto').text(categoria4text);
+        $('.categoria-5 .texto').text(categoria5text);
+        $('.categoria-6 .texto').text(categoria6text);
+        $('.categoria-7 .texto').text(categoria7text);
+
+        $('.categoria-1 .barra').css('background-color', categoria1bkg);
+        $('.categoria-2 .barra').css('background-color', categoria2bkg);
+        $('.categoria-3 .barra').css('background-color', categoria3bkg);
+        $('.categoria-4 .barra').css('background-color', categoria4bkg);
+        $('.categoria-5 .barra').css('background-color', categoria5bkg);
+        $('.categoria-6 .barra').css('background-color', categoria6bkg);
+        $('.categoria-7 .barra').css('background-color', categoria7bkg);
+
+        var categoriaTexto;
+        if (valorIndice >= 90)
+            categoriaTexto = "categoria-7";
+        else if (valorIndice >= 80)
+            categoriaTexto = "categoria-6";
+        else if (valorIndice >= 70)
+            categoriaTexto = "categoria-5";
+        else if (valorIndice >= 60)
+            categoriaTexto = "categoria-4";
+        else if (valorIndice >= 50)
+            categoriaTexto = "categoria-3";
+        else if (valorIndice >= 30)
+            categoriaTexto = "categoria-2";
+        else 
+            categoriaTexto = "categoria-1";
+
+
+        $('.'+categoriaTexto+' .select').css('opacity', '1');
+        $('.'+categoriaTexto+' .texto').css('font-weight', 'bold');
+
+    });
+
+
+</script>

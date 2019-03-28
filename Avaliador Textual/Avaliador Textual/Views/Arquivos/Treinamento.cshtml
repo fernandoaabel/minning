@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Arquivo>
+
+@{
+    ViewBag.Title = "Treinamento concluído";
+
+    var data    = TempData["DataTreinamento"];
+    var message = TempData["TreinamentoRealizado"];
+}
+
+
+<div class="form-horizontal" style="text-align: center;">
+    <div style="display:inline-block">
+        
+        <div class="form-group" style="margin: 25px;">
+            <h1>@ViewBag.Title</h1>
+            <h4> O treinamento foi realizado com sucesso com @Model.Count() arquivo(s).</h4>
+            <p>@data</p>
+            <div style="white-space:pre; text-align: left; font-family: Segoe UI">
+                <!--<h5>Estatísticas do Treinamento:</h5>-->@message
+            </div>
+        
+        <div class="form-group">
+            <img src="~/Images/complete.png" style="width:200px; height:200px;" />
+        </div>
+        
+        <div class="form-group">
+                @Html.ActionLink("Voltar", "Index", "Arquivos", null, new { @class = "btn btn-default" })
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,86 @@
+﻿@model Arquivo
+
+<div class="col-md-4">
+    <div class="card">
+        <div class=".jqplot-meterGauge-label">
+            <h4 class="title">Dificuldade de Leitura</h4>
+            <p class="category">Grau de dificuldade de leitura do texto, conforme resultado de Fernández-Huerta.</p>
+        </div>
+        <div class="content">
+            <div id="dificuldadeLeituraChart" style="height:230px; background-color:white;"></div>
+
+            <table class="jqplot-table-legend" style="margin:0;">
+                <tbody>
+                    <tr class="jqplot-table-legend">
+                        <td class="jqplot-table-legend jqplot-table-legend-swatch" style="text-align: center;">
+                            <div class="jqplot-table-legend-swatch-outline">
+                                <div class="jqplot-table-legend-swatch" style="background-color: #D63A3A; border-color: #D63A3A;">
+                                </div>
+                            </div>
+                        </td>
+                        <td class="jqplot-table-legend jqplot-table-legend-label">Muito difícil</td>
+                    </tr>
+                    <tr class="jqplot-table-legend">
+                        <td class="jqplot-table-legend jqplot-table-legend-swatch" style="text-align: center;">
+                            <div class="jqplot-table-legend-swatch-outline">
+                                <div class="jqplot-table-legend-swatch" style="background-color:#FF9500; border-color:#FF9500;"></div>
+                            </div>
+                        </td>
+                        <td class="jqplot-table-legend jqplot-table-legend-label">Difícil</td>
+                    </tr>
+                    <tr class="jqplot-table-legend">
+                        <td class="jqplot-table-legend jqplot-table-legend-swatch" style="text-align: center;">
+                            <div class="jqplot-table-legend-swatch-outline">
+                                <div class="jqplot-table-legend-swatch" style="background-color:#E7E658; border-color:#E7E658;"></div>
+                            </div>
+                        </td>
+                        <td class="jqplot-table-legend jqplot-table-legend-label">Normal</td>
+                    </tr>
+                    <tr class="jqplot-table-legend">
+                        <td class="jqplot-table-legend jqplot-table-legend-swatch" style="text-align: center;">
+                            <div class="jqplot-table-legend-swatch-outline">
+                                <div class="jqplot-table-legend-swatch" style="background-color:#61C261; border-color:#61C261;"></div>
+                            </div>
+                        </td>
+                        <td class="jqplot-table-legend jqplot-table-legend-label">Fácil</td>
+                    </tr>
+                    <tr class="jqplot-table-legend">
+                        <td class="jqplot-table-legend jqplot-table-legend-swatch" style="text-align: center;">
+                            <div class="jqplot-table-legend-swatch-outline">
+                                <div class="jqplot-table-legend-swatch" style="background-color:#3AC23A; border-color:#3AC23A;"></div>
+                            </div>
+                        </td>
+                        <td class="jqplot-table-legend jqplot-table-legend-label">Muito fácil</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        s1 = [@Model.IndiceApreensibilidade];
+
+        plot4 = $.jqplot('dificuldadeLeituraChart', [s1], {
+            grid: {
+                background: "transparent"
+            },
+            seriesDefaults: {
+                renderer: $.jqplot.MeterGaugeRenderer,
+                rendererOptions: {
+                    background: '#FFFFFF',
+                    shadowAlpha: 0,
+                    min:0,
+                    max: 100,
+                    label: '',
+                    labelHeightAdjust: -5,
+                    needlePad: 20,
+                    intervals: [29, 59, 69, 89, 100],
+                    intervalColors: ['#D63A3A', '#FF9500', '#E7E658', '#61C261', '#3AC23A']
+                }
+            }
+        });
+    });
+</script>

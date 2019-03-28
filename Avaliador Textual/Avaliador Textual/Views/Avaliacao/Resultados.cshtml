@@ -1,0 +1,116 @@
+﻿@model Arquivo
+
+@{
+    ViewBag.Title = "Visualização Analítica";
+    var message = TempData["Message"];
+}
+
+<h3>@ViewBag.Title</h3>
+
+
+<div class="opcoesPreBlock">
+
+</div>
+
+<div class="divGeral">
+    <nav class="sidenav">
+        <a href="#" class="tablink tabMarcada" onclick="openTab(event, 'apreensibilidade')">Apreensibilidade</a>
+        <a href="#" class="tablink" onclick="openTab(event, 'qualidade')">Qualidade</a>
+        <a href="#" class="tablink" onclick="openTab(event, 'detalhes')">Detalhes sobre o texto</a>
+    </nav>
+
+    <div class="">
+
+        <div id="apreensibilidade" class="opcaoEntrada container-fluid" style="display:block">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="content" style="text-align:center;">
+                            Apreensibilidade é a facilidade de um texto ser entendido ou compreendido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @Html.Partial("IndiceFormula", Model)
+                @Html.Partial("DificuldadeLeitura", Model)
+                @Html.Partial("EscolaridadeAproximada", Model)
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                @Html.Partial("WordCloud", Model)
+            </div>
+        </div>
+
+        <div id="qualidade" class="opcaoEntrada">
+            @if (@message != null)
+            {
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class=".jqplot-meterGauge-label">
+                            <h4 class="title">Ops, algo aconteceu.</h4>
+                            <p class="category"></p>
+                        </div>
+                        <div class="content" style="font-weight:bold; text-align:center;">
+                            @message
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="content" style="text-align:center;">
+                                Qualidade é a relevância das informações do texto ao assunto abordado.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @Html.Partial("Classificacao", Model)
+                </div>
+                <div class="row">
+                    @Html.Partial("BubbleChartTags", Model)
+                    @Html.Partial("BubbleChart", Model)
+                </div>
+            }
+        </div>
+
+        <div id="detalhes" class="opcaoEntrada">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class=".jqplot-meterGauge-label">
+                            <h4 class="title">Nome/Site</h4>
+                            <p class="category"></p>
+                        </div>
+                        <div class="content" style="text-align:center;">
+                            @Model.Nome
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class=".jqplot-meterGauge-label">
+                            <h4 class="title">Texto avaliado</h4>
+                            <p class="category"></p>
+                        </div>
+                        <div class="content" style="text-align:center;">
+                            @Model.Texto
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+<p>
+    @Html.ActionLink("Nova Avaliação", "Index", "Avaliacao", null, new { @class = "btn btn-primary" })
+</p>

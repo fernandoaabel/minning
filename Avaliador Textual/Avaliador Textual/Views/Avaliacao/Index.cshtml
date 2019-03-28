@@ -1,0 +1,37 @@
+﻿@model Arquivo
+
+@{
+    ViewBag.Title = "Avaliação de Textos";
+
+    var message = TempData["Message"];
+}
+
+<h3>@ViewBag.Title</h3>
+
+<div class="opcoesPreBlock">
+    <div class="message">@message</div>
+</div>
+
+@using (Html.BeginForm("Resultados", "Avaliacao", FormMethod.Post))
+{
+    <div class="divGeral">
+        <nav class="sidenav">
+            <a href="#" class="tablink tabMarcada" onclick="openTab(event, 'InputTexto')">Texto</a>
+            <a href="#" class="tablink" onclick="openTab(event, 'InputURL')">URL de Site</a>
+        </nav>
+
+        <div class="tab-content">
+            <div id="InputTexto" class="opcaoEntrada" style="display:block">
+                @Html.TextAreaFor(model => model.Texto, new { @class = "form-control", @placeholder = "Informe o texto desejado.", @style = "max-width:none;width:100%;min-height:250px;" })
+            </div>
+
+            <div id="InputURL" class="opcaoEntrada">
+                @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", @style = "max-width:none;width:100%;", @placeholder = "Informe a URL desejada."} )
+            </div>
+            <br />
+            <div class="divBotao">
+                <input type="submit" value="Realizar Avaliação »" class="btn btn-primary btn-lg" />
+            </div>
+        </div>
+    </div>
+}

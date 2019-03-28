@@ -1,0 +1,51 @@
+﻿@model Arquivo
+
+@{
+    ViewBag.Title = "Upload de textos para o treinamento.";
+}
+
+<h3>Selecione os arquivos para serem adicionados ao treinamento.</h3>
+
+<div class="divGeral">
+    <div class="tab-content">
+        <div class="opcoesPreBlock">
+            <div class="divPesquisa">
+                <div id="nroArquivos"></div>
+            </div>
+            <div class="divBotao">
+                @Html.ActionLink("Voltar à lista", "Index", "Arquivos", null, new { @class = "btn btn-default" })
+                <input id="btnUpload" type="submit" value="Iniciar Upload »" class="btn btn-primary" />
+            </div>
+        </div>
+
+        <div id="arquivos" class="opcaoEntrada" style="display:block; padding-top: 30px;" >
+
+            <form action="~/Arquivos/SalvaArquivosUpload" method="post" enctype="multipart/form-data" class="dropzone needsclick dz-clickable" id="myDropzone">
+                <div class="dz-message needsclick">
+                    <img src="~/Images/add_file.png" style="width:100px; height:100px;" />
+                    <br /><br />
+                    Arraste arquivos ou clique aqui.
+                </div>
+
+                <div class="fallback">
+                    <input name="file" type="file" multiple />
+                    <input type="submit" value="Upload" />
+                </div>
+            </form>
+        </div>
+        <br />
+        <h4>Dicas:</h4>
+        <ul>
+            <li>Clique nas imagens pré-carregadas para cancelar o seu upload.</li>
+            <li>Seus arquivos podem conter as tags "Nome" e "Tag" no seu início, para agilizar a inserção dessas informações.
+            <br />
+            Exemplo:
+            <br />
+            <img src="~/Images/ExemploTags.png" />
+            </li>
+
+        </ul>
+        
+        
+    </div>
+</div>
